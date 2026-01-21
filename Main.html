@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arch Connect — Secure by Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --fg: #ffffff;
+      --muted: #9ca3af;
+      --card: #111111;
+      --accent: #2563eb;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav a:hover {
+      color: var(--fg);
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 640px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 6rem 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      border: 1px solid #1f2937;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: #1f2937;
+      margin: 6rem 0;
+    }
+
+    footer {
+      border-top: 1px solid #1f2937;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Arch Connect</div>
+    <nav>
+      <a href="#security">Security</a>
+      <a href="#software">Software</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#opensource">Open Source</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Security, re‑engineered.</h1>
+    <p>Arch Connect builds secure, repairable, and fully open devices — designed from the bootloader up, not bolted on later.</p>
+  </div>
+</section>
+
+<section id="security">
+  <div class="grid">
+    <div class="card">
+      <h3>Secure Boot Chain</h3>
+      <p>Cryptographically verified firmware, kernel, and root filesystem. Tampering is detected before the OS loads.</p>
+    </div>
+    <div class="card">
+      <h3>Secure Enclave</h3>
+      <p>Isolated security processor for keys, counters, repair state, and device integrity flags.</p>
+    </div>
+    <div class="card">
+      <h3>Repair Mode</h3>
+      <p>Factory-authorised recovery and servicing without bypassing security or user trust.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="software">
+  <div class="grid">
+    <div class="card">
+      <h3>Arch-based OS</h3>
+      <p>A rolling Linux system adapted for phones, tablets, and laptops — no vendor lock-in.</p>
+    </div>
+    <div class="card">
+      <h3>Plasma Mobile</h3>
+      <p>A modern touch-first interface with full desktop power when docked.</p>
+    </div>
+    <div class="card">
+      <h3>OTA Updates</h3>
+      <p>Atomic, verifiable system updates with rollback protection.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="hardware">
+  <div class="grid">
+    <div class="card">
+      <h3>Designed for Repair</h3>
+      <p>Replaceable components, documented hardware, and software that respects ownership.</p>
+    </div>
+    <div class="card">
+      <h3>Mid‑range Power</h3>
+      <p>Balanced performance, long battery life, and efficient ARM architecture.</p>
+    </div>
+    <div class="card">
+      <h3>No Artificial Limits</h3>
+      <p>Unlock bootloaders, install custom kernels, and audit everything.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="opensource">
+  <div class="grid">
+    <div class="card">
+      <h3>Open by Default</h3>
+      <p>All core components are free and open-source. No simulated security. No black boxes.</p>
+    </div>
+    <div class="card">
+      <h3>Community Driven</h3>
+      <p>Development happens in public. Contributions, forks, and audits are encouraged.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Arch Connect — Open hardware & software platform
+</footer>
+
+</body>
+</html>
