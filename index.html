@@ -3,225 +3,224 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arch Connect — Secure by Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Arch Connect</title>
   <style>
-    :root {
-      --bg: #000000;
-      --fg: #ffffff;
-      --muted: #9ca3af;
-      --card: #111111;
-      --accent: #2563eb;
-      --radius: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.4;
     }
+    a { color: inherit; text-decoration: none; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #1f2937;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem 2rem;
+      padding: 28px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #111;
     }
-
-    .logo {
-      font-weight: 600;
-      letter-spacing: -0.02em;
+    nav a {
+      margin-left: 28px;
+      font-size: 14px;
+      opacity: 0.8;
     }
-
-    .nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .nav a:hover {
-      color: var(--fg);
-    }
+    nav a:hover { opacity: 1; }
 
     .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 120px 24px 140px;
     }
-
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 700;
+      font-size: 64px;
+      font-weight: 600;
       letter-spacing: -0.03em;
-      margin-bottom: 1rem;
     }
-
     .hero p {
-      color: var(--muted);
-      max-width: 640px;
-      margin: auto;
-      font-size: 1.1rem;
+      margin-top: 18px;
+      font-size: 22px;
+      color: #aaa;
     }
 
     section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 6rem 2rem;
+      padding: 120px 64px;
     }
 
-    .grid {
+    .section-title {
+      text-align: center;
+      font-size: 44px;
+      margin-bottom: 64px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Devices */
+    .devices {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 48px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      border: 1px solid #1f2937;
+    .device-card {
+      background: #0b0b0b;
+      border-radius: 24px;
+      padding: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card h3 {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+    .device-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
     }
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .device-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
-    .divider {
-      height: 1px;
-      background: #1f2937;
-      margin: 6rem 0;
+    .device-card p {
+      color: #aaa;
+      margin-bottom: 28px;
+    }
+
+    .device-card button {
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Purchase flow */
+    .purchase {
+      max-width: 900px;
+      margin: auto;
+      background: #0b0b0b;
+      border-radius: 32px;
+      padding: 64px;
+    }
+
+    .step {
+      margin-bottom: 48px;
+    }
+
+    .step h4 {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .option {
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 24px;
+      cursor: pointer;
+      transition: border 0.2s ease, background 0.2s ease;
+    }
+
+    .option:hover {
+      border-color: #fff;
+      background: #111;
     }
 
     footer {
-      border-top: 1px solid #1f2937;
-      padding: 3rem 2rem;
       text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding: 64px 24px;
+      color: #666;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Arch Connect</div>
-    <nav>
-      <a href="#security">Security</a>
-      <a href="#software">Software</a>
-      <a href="#hardware">Hardware</a>
-      <a href="#opensource">Open Source</a>
-    </nav>
-  </div>
+  <strong>Arch Connect</strong>
+  <nav>
+    <a href="#devices">Devices</a>
+    <a href="#security">Security</a>
+    <a href="#opensource">Open Source</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>Security, re‑engineered.</h1>
-    <p>Arch Connect builds secure, repairable, and fully open devices — designed from the bootloader up, not bolted on later.</p>
-  </div>
-</section>
+<div class="hero">
+  <h1>Power. Control. Trust.</h1>
+  <p>Arch‑based devices designed with uncompromising security.</p>
+</div>
 
-<section id="security">
-  <div class="grid">
-    <div class="card">
-      <h3>Secure Boot Chain</h3>
-      <p>Cryptographically verified firmware, kernel, and root filesystem. Tampering is detected before the OS loads.</p>
+<section id="devices">
+  <h2 class="section-title">Devices</h2>
+  <div class="devices">
+    <div class="device-card">
+      <h3>Arch A Pro</h3>
+      <p>Secure enclave. Verified boot. Plasma Mobile.</p>
+      <button>Select</button>
     </div>
-    <div class="card">
-      <h3>Secure Enclave</h3>
-      <p>Isolated security processor for keys, counters, repair state, and device integrity flags.</p>
+    <div class="device-card">
+      <h3>Arch Tablet</h3>
+      <p>Large display. Developer‑first. Repair‑ready.</p>
+      <button>Select</button>
     </div>
-    <div class="card">
-      <h3>Repair Mode</h3>
-      <p>Factory-authorised recovery and servicing without bypassing security or user trust.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="software">
-  <div class="grid">
-    <div class="card">
-      <h3>Arch-based OS</h3>
-      <p>A rolling Linux system adapted for phones, tablets, and laptops — no vendor lock-in.</p>
-    </div>
-    <div class="card">
-      <h3>Plasma Mobile</h3>
-      <p>A modern touch-first interface with full desktop power when docked.</p>
-    </div>
-    <div class="card">
-      <h3>OTA Updates</h3>
-      <p>Atomic, verifiable system updates with rollback protection.</p>
+    <div class="device-card">
+      <h3>Arch Laptop</h3>
+      <p>Arch Linux. Hardware trust. Full control.</p>
+      <button>Select</button>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<section>
+  <h2 class="section-title">Configure Your Device</h2>
+  <div class="purchase">
 
-<section id="hardware">
-  <div class="grid">
-    <div class="card">
-      <h3>Designed for Repair</h3>
-      <p>Replaceable components, documented hardware, and software that respects ownership.</p>
+    <div class="step">
+      <h4>1. Choose Storage</h4>
+      <div class="options">
+        <div class="option">256 GB</div>
+        <div class="option">512 GB</div>
+        <div class="option">1 TB</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Mid‑range Power</h3>
-      <p>Balanced performance, long battery life, and efficient ARM architecture.</p>
-    </div>
-    <div class="card">
-      <h3>No Artificial Limits</h3>
-      <p>Unlock bootloaders, install custom kernels, and audit everything.</p>
-    </div>
-  </div>
-</section>
 
-<div class="divider"></div>
+    <div class="step">
+      <h4>2. Memory</h4>
+      <div class="options">
+        <div class="option">16 GB RAM</div>
+        <div class="option">32 GB RAM</div>
+      </div>
+    </div>
 
-<section id="opensource">
-  <div class="grid">
-    <div class="card">
-      <h3>Open by Default</h3>
-      <p>All core components are free and open-source. No simulated security. No black boxes.</p>
+    <div class="step">
+      <h4>3. Arch Care+</h4>
+      <div class="options">
+        <div class="option">No Coverage</div>
+        <div class="option">Arch Care+ (2 Years)</div>
+        <div class="option">Arch Care+ (3 Years)</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Community Driven</h3>
-      <p>Development happens in public. Contributions, forks, and audits are encouraged.</p>
+
+    <div class="step">
+      <h4>4. Security Services</h4>
+      <div class="options">
+        <div class="option">Standard Secure Boot</div>
+        <div class="option">Advanced Tamper Monitoring</div>
+        <div class="option">Enterprise Trust Mode</div>
+      </div>
     </div>
+
   </div>
 </section>
 
 <footer>
-  © Arch Connect — Open hardware & software platform
+  © Arch Connect. Open source. Built on Arch Linux.
 </footer>
 
 </body>
